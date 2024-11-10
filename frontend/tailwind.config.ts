@@ -11,6 +11,8 @@ const config: Config = {
       backgroundColor: {
         "primary": "#6264D5",
         "secondary": "#DBDCF7",
+        "violet": "#4F3E9C",
+        "gray": "#B9B8B8",
         "black": "#2E353A",
         "white": "#F4F4F4",
       },
@@ -19,6 +21,9 @@ const config: Config = {
         "secondary": "#DBDCF7",
         "black": "#2E353A",
         "white": "#F4F4F4",
+      },
+      outlineColor: {
+        "primary": "#6264D5",
       },
     },
   },

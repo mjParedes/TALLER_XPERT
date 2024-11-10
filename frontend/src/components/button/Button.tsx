@@ -3,16 +3,18 @@ type ButtonProps = {
   onClick: () => void
 }
 
-export const Button = ({title, onClick} : ButtonProps) => {
-  
+export const Button = ({ title, onClick }: ButtonProps) => {
   const handleOnClick = () => {
-    if(onClick){
+    if (onClick) {
       onClick()
     }
   }
-  
+
   return (
-    <button onClick={handleOnClick} className="w-[200px] h-10 bg-secondary hover:bg-tertiary rounded text-white text-base">
+    <button
+      onClick={handleOnClick}
+      className='w-[200px] h-10 bg-primary hover:opacity-70 rounded text-white text-base font-bold'
+    >
       {title}
     </button>
   )

@@ -1,3 +1,4 @@
+import { Search } from "@/components/icons/Search"
 import { CardResult } from "./card-result/CardResult"
 import talleres from "./talleres.json"
 
@@ -8,7 +9,7 @@ type ResultProps = {
 
 export const SectionResults = ({ city, item }: ResultProps) => {
 
-    const workshopsFound = talleres.filter((taller) => taller.ciudad === city && taller.rubro === item)
+    const workshopsFound = talleres.filter((taller) => taller.ciudad.includes(city) && taller.rubro === item)
 
     return (
         <section className="pt-24 pb-36 flex flex-col items-center">
@@ -19,12 +20,15 @@ export const SectionResults = ({ city, item }: ResultProps) => {
                         ?
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-5 gap-x-4 items-center">
                             {workshopsFound.map((taller, index) => (
-                            <CardResult key={index} workshop={taller} />
-                        ))}
+                                <CardResult key={index} workshop={taller} />
+                            ))}
                         </div>
                         :
-                        <p>No se encontraron talleres</p>
-                        }
+                        <div className="flex flex-row gap-1 justify-center items-center">
+                            <Search width={18} />
+                            <p>No existen resultados</p>
+                        </div>
+                    }
 
                 </>
                 :
